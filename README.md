@@ -1,5 +1,6 @@
 # sudavideo_android
 
+Sudavideo Android app（MVP + RxJava2 + Dagger2 + Kotlin）
 
 
 ## 软件截图
