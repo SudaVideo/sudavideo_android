@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./DPlayer.min.css">
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div x5-video-player-type="h5" x5-video-player-fullscreen="true" id="dplayer"></div>
+</body>
+<script src="./DPlayer.min.js"></script>
+<script src="./hls.min.js"></script>
+<script>
+var playUrl = window.location.search.substr(1).replace('playUrl=', '');
+var dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    autoplay: true,
+    isFullscreen: true,
+    video: {
+        url: playUrl,
+        type: 'auto'
+    }
+});
+dp.fullScreen.request('web');
+window.onresize = function() {
+    dp.fullScreen.request('web');
+}
+</script>
+
+</html>
